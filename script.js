@@ -8,24 +8,24 @@ async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     var data = await response.json();
     
-    if(response.status == 404) {
-        document.querySelector(".error").style.display = "block"
-        document.querySelector(".weather").style.display = "none"
+    if(response.status == 404) { // Caso a cidade não seja encontrada
+        document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
     } else {
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed.toFixed(1) + " km/h";
     
-        updateImg(data.weather[0].main)
+        updateImg(data.weather[0].main); // Atualiza a imagem do clima
 
         document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none"
+        document.querySelector(".error").style.display = "none";
     }
 }
 
 function updateImg(data) {
-    weatherIcon.src = `images/${data.toLowerCase()}.png`
+    weatherIcon.src = `images/${data.toLowerCase()}.png`;
 }
 
 searchBtn.addEventListener("click", () => {
