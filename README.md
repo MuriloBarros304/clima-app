@@ -2,6 +2,7 @@
 
 Esta página para consultar as condições climáticas foi feita como exercício de JavaScript, seguindo o passo-a-passo disponível aqui:
 [vídeo no YouTube](https://youtu.be/MIYQR-Ybrn4?si=mSBzxXZWXfAjSrvY)
+[Interface da página](images/interface.png)
 
 ## 🔗 Link de Acesso
 
