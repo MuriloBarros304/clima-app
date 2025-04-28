@@ -11,7 +11,7 @@ body {
 
 .card {
     width: 90%;
-    max-width: 720px;
+    max-width: 650px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     margin: 100px auto 0;
