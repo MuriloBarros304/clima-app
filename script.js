@@ -1,5 +1,4 @@
-const apiKey = "5d2946ec0f77fbb590f94c310233f23d";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl = "/api/weather?city=";
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
@@ -23,9 +22,9 @@ async function checkWeather(city) {
     searchBtn.disabled = true;
     try {
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-        var data = await response.json();
+        const data = await response.json();
         
-        if(response.status == 404) { // Caso a cidade não seja encontrada
+        if(response.status == 404 || data.error) { // Caso a cidade não seja encontrada
             document.querySelector(".error").style.display = "block";
             document.querySelector(".weather").style.display = "none";
         } else {

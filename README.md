@@ -4,7 +4,7 @@ Esta página para consultar as condições climáticas foi feita como exercício
 [vídeo no YouTube](https://youtu.be/MIYQR-Ybrn4?si=mSBzxXZWXfAjSrvY)
 
 ### Interface da página:
-<img src="images/interface.png" alt="Interface" width="200" />
+<img src="images/interface.png" alt="Interface" width="400" />
 
 ## 🔗 Link de Acesso
 
