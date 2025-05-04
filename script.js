@@ -21,7 +21,7 @@ async function checkWeather(city) {
     searchBtn.style.backgroundColor = '#4CAF50'; // Verde
     searchBtn.disabled = true;
     try {
-        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        const response = await fetch(apiUrl + encodeURIComponent(city));
         const data = await response.json();
         
         if(response.status == 404 || data.error) { // Caso a cidade não seja encontrada
