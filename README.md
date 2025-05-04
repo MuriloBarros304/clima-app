@@ -4,11 +4,11 @@ Esta página para consultar as condições climáticas foi feita como exercício
 [vídeo no YouTube](https://youtu.be/MIYQR-Ybrn4?si=mSBzxXZWXfAjSrvY)
 
 ### Interface da página:
-<img src="images/interface.png" alt="Interface" width="400" />
+<img src="images/interface.png" alt="Interface" width="500" />
 
 ## 🔗 Link de Acesso
 
-Acesse a página aqui: [Clima App](https://murilobarros304.github.io/clima-app/)
+Acesse a página aqui: [Clima App](https://clima-app-one-pearl.vercel.app/)
 
 ## 📞 Contato
 
