@@ -19,26 +19,36 @@ function updateImg(data) {
  * @returns {void}
  */
 async function checkWeather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-    var data = await response.json();
-    
-    if(response.status == 404) { // Caso a cidade não seja encontrada
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-    } else {
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed.toFixed(1) + " km/h";
-    
-        updateImg(data.weather[0].main); // Atualiza a imagem do clima
-
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none";
+    searchBtn.style.backgroundColor = '#4CAF50'; // Verde
+    searchBtn.disabled = true;
+    try {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        var data = await response.json();
+        
+        if(response.status == 404) { // Caso a cidade não seja encontrada
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+        } else {
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelector(".wind").innerHTML = data.wind.speed.toFixed(1) + " km/h";
+            
+            updateImg(data.weather[0].main); // Atualiza a imagem do clima
+            
+            document.querySelector(".weather").style.display = "block";
+            document.querySelector(".error").style.display = "none";
+        }
+    }
+    catch (error) {
+        console.error(error)
+    } finally {
+        searchBtn.style.backgroundColor = '';
+        searchBtn.disabled = false;
     }
 }
 
-searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("click", () => { // Arrow function
     checkWeather(searchBox.value);
 });
 
